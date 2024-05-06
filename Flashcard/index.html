@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcard | Mini Projects</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Back</a>
+    </nav>
+    <h1>Flashcard</h1>
+
+    <div id="front">
+      <h2 id="questionText">Question</h2>
+      <button id="revealAnswer">👀 Reveal answer</button>
+    </div>
+
+    <div id="back" hidden>
+      <h2 id="answerText">Answer</h2>
+      <button id="nextQuestion">Next question ➡️</button>
+    </div>
+
+    <script>
+      let front = document.getElementById("front");
+      let back = document.getElementById("back");
+      let questionText = document.getElementById("questionText");
+      let revealAnswer = document.getElementById("revealAnswer");
+      let answerText = document.getElementById("answerText");
+      let nextQuestion = document.getElementById("nextQuestion");
+
+      let getRandomQuestionNumber = () => {
+        return Math.floor(Math.random() * 10) + 1;
+      };
+      let getQuestion = (questionNumber) => {
+        if (questionNumber === 1) {
+          return "木";
+        } else if (questionNumber === 2) {
+          return "山";
+        } else if (questionNumber === 3) {
+          return "日";
+        } else if (questionNumber === 4) {
+          return "月";
+        } else if (questionNumber === 5) {
+          return "雨";
+        } else if (questionNumber === 6) {
+          return "火";
+        } else if (questionNumber === 7) {
+          return "土";
+        } else if (questionNumber === 8) {
+          return "風";
+        } else if (questionNumber === 9) {
+          return "川";
+        } else if (questionNumber === 10) {
+          return "花";
+        }
+      };
+      let getAnswer = (questionNumber) => {
+        if (questionNumber === 1) {
+          return "Tree";
+        } else if (questionNumber === 2) {
+          return "Mountain";
+        } else if (questionNumber === 3) {
+          return "Sun";
+        } else if (questionNumber === 4) {
+          return "Moon";
+        } else if (questionNumber === 5) {
+          return "Rain";
+        } else if (questionNumber === 6) {
+          return "Fire";
+        } else if (questionNumber === 7) {
+          return "Earth";
+        } else if (questionNumber === 8) {
+          return "Wind";
+        } else if (questionNumber === 9) {
+          return "River";
+        } else if (questionNumber === 10) {
+          return "Flower";
+        }
+      };
+      let questionNumber = getRandomQuestionNumber();
+      questionText.innerText = getQuestion(questionNumber);
+
+      revealAnswer.onclick = () => {
+        front.hidden = true;
+        answerText.innerText = getAnswer(questionNumber);
+        back.hidden = false;
+      };
+
+      nextQuestion.onclick = () => {
+        back.hidden = true;
+        front.hidden = false;
+        questionNumber = getRandomQuestionNumber();
+        questionText.innerText = getQuestion(questionNumber);
+      };
+    </script>
+  </body>
+</html>
