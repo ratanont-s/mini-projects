@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flipper | Mini Projects</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Back</a>
+    </nav>
+    <h1>Coin Flipper</h1>
+    <button id="flip">Flip a coin</button>
+
+    <script>
+      let flip = document.getElementById("flip");
+
+      flip.onclick = () => {
+        let randomNumber = Math.random();
+        // console.log(randomNumber);
+        if (randomNumber < 0.5) {
+          alert("Head");
+        } else {
+          alert("Tails");
+        }
+      };
+    </script>
+  </body>
+</html>
