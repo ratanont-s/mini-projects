@@ -3,29 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Counter | Mini Projects</title>
+    <title>Adder | Mini Projects</title>
   </head>
   <body>
     <nav>
       <a href="/">Back</a>
     </nav>
-    <h1>Counter</h1>
-    <input type="text" value="0" size="8" id="number" readonly />
-    <input type="button" value="+" id="increment" />
-    <input type="button" value="Reset" id="reset" />
+    <h1>Adder</h1>
+    <input type="text" size="8" id="a" />
+    +
+    <input type="text" size="8" id="b" />
+    <input type="button" value="=" id="calculate" />
+    <input type="text" size="8" readonly id="c" />
 
     <script>
-      let count = 0;
-      let number = document.getElementById("number");
-      let increment = document.getElementById("increment");
-      let reset = document.getElementById("reset");
-      increment.onclick = () => {
-        count = count + 1;
-        number.value = count;
-      };
-      reset.onclick = () => {
-        count = 0;
-        number.value = count;
+      let a = document.getElementById("a");
+      let b = document.getElementById("b");
+      let c = document.getElementById("c");
+      let calculate = document.getElementById("calculate");
+      calculate.onclick = () => {
+        let answer = Number(a.value) + Number(b.value);
+        c.value = answer;
       };
     </script>
   </body>
