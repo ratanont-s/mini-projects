@@ -35,22 +35,20 @@
       let incorrect = document.getElementById("incorrect");
       let tryAgain = document.getElementById("tryAgain");
 
-      a.onclick = () => {
+      let handleIncorrectAnswer = () => {
         question.hidden = true;
         incorrect.hidden = false;
       };
-      b.onclick = () => {
-        question.hidden = true;
-        incorrect.hidden = false;
-      };
-      c.onclick = () => {
+      let handleCorrectAnswer = () => {
         question.hidden = true;
         correct.hidden = false;
       };
-      d.onclick = () => {
-        question.hidden = true;
-        incorrect.hidden = false;
-      };
+
+      a.onclick = handleIncorrectAnswer;
+      b.onclick = handleIncorrectAnswer;
+      c.onclick = handleCorrectAnswer;
+      d.onclick = handleIncorrectAnswer;
+
       tryAgain.onclick = () => {
         question.hidden = false;
         incorrect.hidden = true;
