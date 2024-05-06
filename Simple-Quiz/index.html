@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Quiz | Mini Projects</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Back</a>
+    </nav>
+    <h1>Simple Quiz</h1>
+    <div id="question">
+      <p><b>คำถาม: </b>ภาษา JavaScript ถูกสร้างเมื่อปีไหน?</p>
+
+      <input type="button" value="(A) 1993" id="a" />
+      <input type="button" value="(B) 1994" id="b" />
+      <input type="button" value="(C) 1995" id="c" />
+      <input type="button" value="(D) 1996" id="d" />
+    </div>
+
+    <p id="correct" hidden><b>ถูกต้อง 🎉</b></p>
+    <div id="incorrect" hidden>
+      <p><b>ยังไม่ถูก 😩</b></p>
+      <input type="button" value="ลองอีกครั้ง" id="tryAgain" />
+    </div>
+
+    <script>
+      let question = document.getElementById("question");
+      let a = document.getElementById("a");
+      let b = document.getElementById("b");
+      let c = document.getElementById("c");
+      let d = document.getElementById("d");
+      let correct = document.getElementById("correct");
+      let incorrect = document.getElementById("incorrect");
+      let tryAgain = document.getElementById("tryAgain");
+
+      a.onclick = () => {
+        question.hidden = true;
+        incorrect.hidden = false;
+      };
+      b.onclick = () => {
+        question.hidden = true;
+        incorrect.hidden = false;
+      };
+      c.onclick = () => {
+        question.hidden = true;
+        correct.hidden = false;
+      };
+      d.onclick = () => {
+        question.hidden = true;
+        incorrect.hidden = false;
+      };
+      tryAgain.onclick = () => {
+        question.hidden = false;
+        incorrect.hidden = true;
+      };
+    </script>
+  </body>
+</html>
