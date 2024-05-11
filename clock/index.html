@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock | Mini Projects</title>
+
+    <!-- Font from Google Fonts - https://fonts.google.com/ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS to style the clock -->
+    <style type="text/tailwindcss">
+      @layer base {
+        html {
+          font-family: "Space Mono", monospace;
+        }
+        body {
+          @apply grid place-content-center w-screen h-screen bg-neutral-900 text-white;
+        }
+      }
+      #time {
+        @apply text-6xl font-bold md:text-7xl lg:text-8xl xl:text-[200px];
+      }
+    </style>
+  </head>
+  <body>
+    <div id="time">--:--:--</div>
+
+    <script>
+      let time = document.getElementById("time");
+
+      let makeToDigits = (number) => {
+        if (number < 10) {
+          return `0${number}`;
+        } else {
+          return number;
+        }
+      };
+
+      let update = () => {
+        let d = new Date();
+        let h = makeToDigits(d.getHours());
+        let m = makeToDigits(d.getMinutes());
+        let s = makeToDigits(d.getSeconds());
+        let text = `${h}:${m}:${s}`;
+        time.innerText = text;
+      };
+
+      update();
+      setInterval(update, 1000);
+    </script>
+  </body>
+</html>
