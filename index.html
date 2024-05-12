@@ -4,19 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Projects</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      a {
+        @apply bg-white p-4 flex shadow rounded;
+      }
+    </style>
   </head>
-  <body>
-    <h1>Mini Projects</h1>
-    <nav>
-      <ul>
-        <li><a href="/Adder/index.html">Adder</a></li>
-        <li><a href="/Counter/index.html">Counter</a></li>
-        <li><a href="/Simple-Quiz/index.html">Simple Quiz</a></li>
-        <li><a href="/Randomizer/index.html">Randomizer</a></li>
-        <li><a href="/Coin-Flipper/index.html">Coin Flipper</a></li>
-        <li><a href="/Flashcard/index.html">Flashcard</a></li>
-        <li><a href="/clock/index.html">Clock</a></li>
-      </ul>
-    </nav>
+  <body class="bg-neutral-50">
+    <main class="container p-4 mx-auto h-screen flex flex-col">
+      <h1 class="font-bold text-4xl mb-4">Mini Projects</h1>
+      <nav class="h-full overflow-y-auto">
+        <ul class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <li><a href="/Adder/index.html">Adder</a></li>
+          <li><a href="/Counter/index.html">Counter</a></li>
+          <li><a href="/Simple-Quiz/index.html">Simple Quiz</a></li>
+          <li><a href="/Randomizer/index.html">Randomizer</a></li>
+          <li><a href="/Coin-Flipper/index.html">Coin Flipper</a></li>
+          <li><a href="/Flashcard/index.html">Flashcard</a></li>
+          <li><a href="/clock/index.html">Clock</a></li>
+        </ul>
+      </nav>
+    </main>
   </body>
 </html>
